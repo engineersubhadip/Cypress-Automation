@@ -1,0 +1,6 @@
+1. Go to https://rahulshettyacademy.com/seleniumPractise/#/
+2. Type in "Ca"
+3. Add to Cart for "Carrots"
+4. Add few items in the cart
+5. Click on the shopping bag icon
+6. Click proceed to checkout

@@ -8,6 +8,11 @@ describe("My First Test Suite", () => {
         cy.get("form").find("> *.search-button").click(); // * Click on a button
         cy.get("div.products-wrapper > *.products .product:visible").should("have.length", 4); // * Validate number of products returned
         cy.wait(1000);
+        
         // cy.get("div.products-wrapper > *.products .product:visible").eq(2).find("> button");
+
+        // cy.get("div.products > *.product").eq(2).contains("ADD TO CART").click(); // * Find element inside scope of another element -> Approach 1
+        cy.get("div.products > *.product").eq(2).find("button[type='button']").click(); // * Find element inside scope of another element -> Approach 2
+
     });
 })
