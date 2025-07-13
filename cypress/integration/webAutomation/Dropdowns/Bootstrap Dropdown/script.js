@@ -8,7 +8,7 @@ describe("Automation Suite", () => {
         cy.get("ul > li.select2-results__option").each(($ele, index, $list) => {
             let currCountry = $ele.text();
             if (currCountry === "Japan") {
-                cy.wrap($ele).click();
+                cy.wrap($ele).should("have.text","Japan").click();
             }
         });
     });
