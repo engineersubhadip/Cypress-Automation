@@ -1,12 +1,25 @@
+// const { describe } = require("mocha");
 
-describe("Suite", () => {
-    it ("Static Dropdown", () => {
+// const { expect } = require("chai");
+// const { it } = require("mocha");
+
+// const { expect } = require("chai");
+
+describe ("Pop-up Alert", () => {
+    it ("Alert", () => {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
-        cy.title().should("eq", "Practice Page");
-        let promise = cy.get("input[name='enter-name']");   
-        cy.wait(1200); 
-        promise.then((data) => {
-            cy.wrap(data).type("Ursula is coming for you.").should("have.value","Ursula is coming for you.");
-        });   
+        cy.get("#alertbtn").should("be.visible").click();
+        cy.on("window:alert", (t) => {
+            expect(t).to.contain("Hello , share this practice page and share your knowledge");
+        });
     });
-})
+
+    it.only ("Confirmation", () => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        cy.get("#confirmbtn").should("be.visible").click();
+        cy.on("window:alert", (t) => {
+            expect(t).to.contain("Hello , Are you sure you want to confirm?");
+            return false;
+        });
+    });
+});

@@ -5,5 +5,7 @@ describe("Suite", () => {
         cy.get("#APjFqb").type("sele");
         cy.wait(1200);
         cy.get("#Alh6id ul[role='listbox'] > li[data-entityid = 'autocomplete_user_feedback_kp_id']").contains("selenophile").click();
+        cy.wait(1000);
+        cy.get("#APjFqb").should("have.value","selenophile meaning");
     });
 })
