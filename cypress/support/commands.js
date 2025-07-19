@@ -1,3 +1,8 @@
+import '../integration/Utility Functions/captureAttributeValue.js';
+import '../integration/Utility Functions/captureInnerText.js';
+import '../integration/Utility Functions/captureReqdHeaders.js';
+
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
